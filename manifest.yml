@@ -1,0 +1,9 @@
+---
+applications:
+- name: lets
+  host: lets
+  domain: cfapps.neo.ondemand.com
+  memory: 1G
+  path: .
+  services:
+    - mongodb

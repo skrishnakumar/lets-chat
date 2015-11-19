@@ -166,6 +166,30 @@ var pipeline = [
                                           process.env.OPENSHIFT_APP_NAME;
 
         }
+    },
+
+    function cloudFoundry(context) {
+        if (process.env.VCAP_SERVICES) {
+            try {
+                var services = JSON.parse(process.env.VCAP_SERVICES);
+              } catch (err) {
+                //throw new VError(err, 'Environment variable VCAP_SERVICES is not a valid JSON string.');
+              }
+
+              var result = {};
+              for (var s in services) {
+                for (var si in services[s]) {
+                  var svc = services[s][si];
+                  result[svc.name] = svc; // name is the service instance id
+                  console.log(JSON.stringify(svc));
+                  if (svc.credentials 
+                            && svc.credentials.uri
+                            && svc.credentials.uri.indexOf('mongodb') === 0) {
+                      context.result.database.uri = svc.credentials.uri;
+                  }
+                }
+              }
+        }
     }
 ];
 
