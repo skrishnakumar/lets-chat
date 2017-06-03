@@ -2,8 +2,8 @@
 applications:
 - name: lets
   host: lets
-  domain: cfapps.neo.ondemand.com
-  memory: 1G
+  domain: cfapps.sap.hana.ondemand.com
+  memory: 512M
   path: .
   services:
     - mongodb

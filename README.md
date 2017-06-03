@@ -29,43 +29,21 @@ A self-hosted chat app for small teams built by [Security Compass][seccom].
 * MIT Licensed
 
 
-## Deployment
+## Deployment on Cloud Foundry
 
-For installation instructions, please use the following links:
+Navigate inside the folder which has manifest file
 
-* [Local installation][install-local]
-* [Docker][install-docker]
-* [Heroku][install-heroku]
-* [Vagrant][install-vagrant]
+cf api https://api.cf.sap.hana.ondemand.com/
 
-## Support & Problems
+cf login 
 
-We have a [troubleshooting document][troubleshooting], otherwise please use our
-[mailing list][mailing-list] for support issues and questions.
+cf create-service mongodb v3.0-container mongodb
 
+cf push 
 
-## Bugs and feature requests
+## Note:  
 
-Have a bug or a feature request? Please first read the [issue
-guidelines][contributing] and search for existing and closed issues. If your
-problem or idea is not addressed yet, [please open a new issue][new-issue].
-
-
-## Documentation
-
-Let's Chat documentation is hosted in the [wiki]. If there is an inaccuracy in
-the documentation, [please open a new issue][new-issue].
-
-
-## Contributing
-
-Please read through our [contributing guidelines][contributing]. Included are
-directions for opening issues, coding standards, and notes on development.
-
-Editor preferences are available in the [editor config][editorconfig] for easy
-use in common text editors. Read more and download plugins at
-<http://editorconfig.org>.
-
+please add a suffix or prefix (or change the entire name) to the host attribute within the manifest.yml file to avoid 'The host is taken' error. 
 
 ## License
 
@@ -84,9 +62,4 @@ Released under [the MIT license][license].
 [kerberos]: https://github.com/sdelements/lets-chat-kerberos
 [s3]: https://github.com/sdelements/lets-chat-s3
 [seccom]: http://securitycompass.com/
-[hubot]: https://github.com/sdelements/hubot-lets-chat
-[azure]: https://github.com/maximilian-krauss/lets-chat-azure
-[install-local]: https://github.com/sdelements/lets-chat/wiki/Installation
-[install-docker]: https://registry.hub.docker.com/u/sdelements/lets-chat/
-[install-heroku]: https://github.com/sdelements/lets-chat/wiki/Heroku
-[install-vagrant]: https://github.com/sdelements/lets-chat/wiki/Vagrant
+
