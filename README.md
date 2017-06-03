@@ -62,4 +62,9 @@ Released under [the MIT license][license].
 [kerberos]: https://github.com/sdelements/lets-chat-kerberos
 [s3]: https://github.com/sdelements/lets-chat-s3
 [seccom]: http://securitycompass.com/
-
+[hubot]: https://github.com/sdelements/hubot-lets-chat
+[azure]: https://github.com/maximilian-krauss/lets-chat-azure
+[install-local]: https://github.com/sdelements/lets-chat/wiki/Installation
+[install-docker]: https://registry.hub.docker.com/u/sdelements/lets-chat/
+[install-heroku]: https://github.com/sdelements/lets-chat/wiki/Heroku
+[install-vagrant]: https://github.com/sdelements/lets-chat/wiki/Vagrant
